@@ -4,7 +4,7 @@ import poplib
 import imaplib
 from email.mime.text import MIMEText
 from email.header import Header
-class operate_email:
+class OperateEmail:
     # 此函数通过使用smtplib实现发送邮件
     def send_email_by_smtp(self):
         # 用于发送邮件的邮箱。修改成自己的邮箱

@@ -1,11 +1,11 @@
-import datetime
+﻿import datetime
 
 longmonth = [1, 3, 5, 7, 8, 10, 12]
 shortmonth = [4, 6, 9, 11]
 
 
-def calendar(year, month, day):
-    date = datetime.datetime(year, month, day, 0, 0, 0)
+def calendar(year, month):
+    date = datetime.datetime(year, month, 1, 0, 0, 0)
     result = "Sun\tMon\tTue\tWed\tThu\tFri\tSat\t\n"
     if date.month in longmonth:
         days = 31
@@ -17,7 +17,7 @@ def calendar(year, month, day):
         else:
             days = 28
     num = 0
-    firstweekday = (1 - date.day + date.weekday()) % 7 + 1
+    firstweekday = date.weekday() + 1
     lenth = (days + firstweekday) // 7 + 1
     for lent in range(1, lenth + 1):
         for lis in range(1, 8):
@@ -32,4 +32,4 @@ def calendar(year, month, day):
 
 
 
-print(calendar(2016,2,24))
+print(calendar(2016,2))

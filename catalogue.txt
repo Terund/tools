@@ -2,3 +2,4 @@
 2、邮件发送接收功能（operate_email）
 3、使用钉钉机器人发送消息（sendding）
 4、增加输出日历功能（calendar）
+5、增加随机生成指定长度的数字验证码功能（random_code）
