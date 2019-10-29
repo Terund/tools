@@ -4,3 +4,4 @@
 4、增加输出日历功能（calendar）
 5、增加随机生成指定长度的数字验证码功能（random_code）
 6、增加pymysql数据库操作（mysql）
+7、增加识别简单图片上文本功能（image_to_text）
