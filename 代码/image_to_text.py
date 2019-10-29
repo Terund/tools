@@ -1,5 +1,5 @@
 ﻿from PIL import Image
-
+import pytesseract
 
 # 图像识别获取图片上的所有数字
 # img参数为图片路径
