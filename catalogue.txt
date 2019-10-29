@@ -6,3 +6,4 @@
 6、增加pymysql数据库操作（mysql）
 7、增加识别简单图片上文本功能（image_to_text）
 8、增加下载图片功能（download_image）
+9、增加redis数据库操作（redis）
