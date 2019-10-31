@@ -1,5 +1,4 @@
 ﻿import requests
-from PIL import Image
 
 
 # 保存图片到本地
