@@ -8,3 +8,4 @@
 8、增加下载图片功能（download_image）
 9、增加redis数据库操作（redis）
 10、增加pymongo数据库操作（mongo）
+11、通过图片链接下载图片（save_image）
