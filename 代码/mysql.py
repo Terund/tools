@@ -1,22 +1,39 @@
 import pymysql
 
-# 创建数据库连接，主机，端口，用户，密码，库名
-db = pymysql.connect(
-    host="localhost",# 主机名
-    port=3306,# 端口名
-    user="root",# 用户名
-    password="123456",# 数据库密码
-    db="werewolf",# 数据库名字
-)
-# 拿到游标
-cursor = db.cursor()
-# 要执行的sql语句
-sql = """
-    create table player(id int,addr char(32),name char(16),number int,alive_status int,info char(16));
-"""
-# 执行sql语句
-cursor.execute(sql)
-# 提交操作
-db.commit()
-# 关闭连接
-db.close()
+
+class OperateMysql:
+    def __init__(self, host=None, port=None, password=None, db=None, user=None):
+        """
+        链接数据库
+        :param host: 主机ip
+        :param port: 端口号
+        :param password: 数据库密码
+        :param db: 数据库名
+        :param user: 数据库用户
+        """
+        self.db = pymysql.connect(
+            host=host,
+            port=port,
+            password=password,
+            db=db,
+            user=user
+        )
+
+    def operate(self, sql):
+        """
+        获取数据
+        :param sql: 要执行的sql语句
+        :return: 返回查询得到的结果
+        """
+        cursor = self.db.cursor()
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        self.db.commit()
+        return result
+
+    def __del__(self):
+        """
+        关闭数据库链接
+        :return:无返回值
+        """
+        self.db.close()
